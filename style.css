@@ -13,6 +13,23 @@ body {
     font-family: JetBrains Mono, monospace;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Ensure proper mobile viewport handling */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Prevent zoom on double tap */
+* {
+    touch-action: manipulation;
 }
 
 a{
@@ -94,6 +111,439 @@ a{
 /* Sidebar active state completely removed */
 
 /* Sidebar active state removed */
+
+/* Mobile-First Responsive Design */
+@media (max-width: 768px) {
+    /* Reset container for mobile */
+    .container {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 100vh;
+        width: 100% !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Mobile sidebar - move to bottom */
+    .sidebar {
+        width: 100% !important;
+        height: 70px !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        padding: 10px 20px !important;
+        border-right: none !important;
+        border-top: 2px solid #3B3B3B !important;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3) !important;
+        background-color: #000000 !important;
+        z-index: 1000 !important;
+    }
+    
+    /* Mobile sidebar icons */
+    .sidebar-icon {
+        width: 45px !important;
+        height: 45px !important;
+        margin: 0 5px !important;
+        border-radius: 8px !important;
+        transition: background-color 0.2s ease !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .sidebar-icon:active {
+        background-color: rgba(142, 255, 159, 0.2) !important;
+        transform: scale(0.95) !important;
+    }
+    
+    .sidebar-icon i {
+        font-size: 20px !important;
+    }
+    
+    /* Mobile main content */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 15px 10px 80px 10px !important; /* Added 80px bottom padding for bottom sidebar */
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Make window headers more compact on mobile */
+    .window-header {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+    
+    .window-button {
+        width: 10px !important;
+        height: 10px !important;
+    }
+    
+    .window-title {
+        font-size: 12px !important;
+    }
+    
+    /* Mobile typography adjustments */
+    .name {
+        font-size: 28px !important;
+        text-align: left !important;
+    }
+    
+    .whoami-title {
+        font-size: 20px !important;
+        text-align: center !important;
+    }
+    
+    .whoami-section h2 {
+        font-size: 18px !important;
+        text-align: center !important;
+    }
+    
+    /* Terminal adjustments for mobile */
+    .terminal-container {
+        margin: 15px 0 !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+    }
+    
+    #terminal-content {
+        font-size: 13px !important;
+        padding: 15px !important;
+        max-height: 250px !important;
+        overflow-y: auto !important;
+    }
+    
+    .terminal-input-container {
+        padding: 10px !important;
+        font-size: 13px !important;
+    }
+    
+    #terminal-input-box,
+    #game-terminal-input {
+        font-size: 13px !important;
+        padding: 10px !important;
+    }
+    
+    /* Games section mobile optimization */
+    .games-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    
+    .game-card {
+        width: 100% !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+    
+    .game-preview {
+        height: 180px !important;
+    }
+    
+    .game-title {
+        font-size: 18px !important;
+    }
+    
+    .game-description {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .download-btn {
+        font-size: 13px !important;
+        padding: 10px 15px !important;
+        margin-top: 10px !important;
+    }
+    
+    /* About section mobile optimization */
+    .about-container {
+        padding: 0 !important;
+        margin: 15px 0 !important;
+    }
+    
+    .profile-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+    }
+    
+    .profile-image-container {
+        order: -1 !important;
+        width: 150px !important;
+        height: 150px !important;
+        align-self: center !important;
+        margin: 0 auto !important;
+    }
+    
+    .about-text {
+        text-align: center !important;
+    }
+    
+    .about-name {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+    
+    .about-paragraph {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        text-align: left !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .about-sections-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .education-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 10px !important;
+    }
+    
+    .experience-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 10px !important;
+    }
+    
+    /* Mobile logo styling - stack vertically and center */
+    .school-logo, .company-logo {
+        margin-right: 0 !important;
+        margin-bottom: 15px !important;
+        align-self: center !important;
+    }
+    
+    .interests-container {
+        justify-content: center !important;
+        gap: 15px !important;
+    }
+    
+    /* Contact section mobile optimization */
+    .contact-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .contact-terminal {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .form-field {
+        margin-bottom: 15px !important;
+    }
+    
+    .form-field label {
+        font-size: 13px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .form-field input,
+    .form-field textarea {
+        font-size: 14px !important;
+        padding: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .send-btn {
+        font-size: 14px !important;
+        padding: 12px 20px !important;
+        margin-top: 15px !important;
+        width: 100% !important;
+    }
+    
+    .info-item {
+        flex-direction: row !important;
+        text-align: left !important;
+        gap: 15px !important;
+        align-items: center !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .info-item i {
+        font-size: 18px !important;
+        min-width: 20px !important;
+    }
+    
+    .social-links {
+        justify-content: center !important;
+        margin: 20px 0 !important;
+        gap: 15px !important;
+    }
+    
+    .social-icon {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    /* Footer mobile optimization */
+    .footer-columns {
+        flex-direction: column !important;
+        gap: 25px !important;
+    }
+    
+    .footer-column {
+        text-align: center !important;
+    }
+    
+    .footer-bottom {
+        flex-direction: column !important;
+        gap: 15px !important;
+        text-align: center !important;
+    }
+    
+    .footer-techs {
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+    
+    .footer-nav a {
+        font-size: 14px !important;
+        padding: 5px 0 !important;
+    }
+    
+    /* Mobile footer fix - remove any bottom spacing */
+    .footer {
+        margin-top: 15px !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Marquee mobile optimization */
+    .tech-marquee img {
+        height: 24px !important;
+        margin: 0 10px !important;
+    }
+    
+    /* Split terminal mobile handling */
+    .split-container {
+        flex-direction: column !important;
+    }
+    
+    #game-terminal,
+    #login-screen {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 300px !important;
+    }
+    
+    /* Improve touch targets for mobile */
+    .terminal-action-btn,
+    .download-btn,
+    .send-btn {
+        min-height: 44px !important;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+        margin: 8px 0 !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+    }
+    
+    /* Better spacing for mobile readability */
+    .window-divider {
+        margin: 20px 0 !important;
+    }
+    
+    /* Loading screen adjustments */
+    .loading-text {
+        font-size: 16px !important;
+    }
+    
+    /* Matrix canvas mobile optimization */
+    #matrix-canvas,
+    #game-matrix-canvas,
+    #login-matrix-canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* Mobile section headers */
+    .games-section,
+    .contact-section {
+        font-size: 22px !important;
+        text-align: center !important;
+        margin: 20px 0 !important;
+    }
+    
+    .about-title {
+        font-size: 18px !important;
+        text-align: center !important;
+    }
+    
+    /* Prevent zoom on input focus */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        font-size: 16px !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+    }
+    
+    /* Orientation change handling */
+    @media (orientation: landscape) and (max-height: 500px) {
+        .sidebar {
+            height: 60px;
+            padding: 5px 20px;
+        }
+        
+        .sidebar-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .sidebar-icon i {
+            font-size: 18px;
+        }
+        
+        .main-content {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+/* Tablet-specific responsive design */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-content {
+        padding: 20px 15px;
+    }
+    
+    .games-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .game-card {
+        width: calc(50% - 10px);
+        max-width: 350px;
+    }
+    
+    .profile-container {
+        gap: 20px;
+    }
+    
+    .about-sections-container {
+        gap: 25px;
+    }
+    
+    .contact-container {
+        gap: 20px;
+    }
+}
 
 .window-btn {
     background-color: #1a1a1a;
@@ -292,6 +742,7 @@ a{
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
+    text-align: left;
 }
 
 .whoami-response h2.title {
@@ -979,17 +1430,191 @@ input:-webkit-autofill:focus {
     /* Responsive split terminal */
     .split-container {
         flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
     }
 
     #game-terminal,
     #login-screen {
         width: 100%;
-        height: 50vh;
+        height: calc(50vh - 1px);
+        min-height: 300px;
     }
 
     #game-terminal {
         border-right: none;
         border-bottom: 2px solid #3B3B3B;
+    }
+
+    #login-screen {
+        padding: 20px 15px;
+        overflow-y: auto;
+    }
+
+    /* Mobile login form optimizations */
+    .login-form {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .login-header h2 {
+        font-size: 28px !important;
+    }
+
+    .blink-text {
+        font-size: 12px !important;
+    }
+
+    .login-form .form-group {
+        margin-bottom: 15px !important;
+    }
+
+    .login-form input {
+        font-size: 14px !important;
+        padding: 8px 12px !important;
+    }
+
+    #login-button {
+        font-size: 14px !important;
+        padding: 10px 20px !important;
+    }
+
+    .hint-text {
+        font-size: 11px !important;
+        margin: 5px 0 !important;
+    }
+
+    /* Mobile game terminal optimizations */
+    #game-terminal-content {
+        padding: 10px !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        word-wrap: break-word !important;
+        white-space: pre-wrap !important;
+    }
+
+    #game-terminal-input {
+        font-size: 13px !important;
+        padding: 6px 8px !important;
+        width: calc(100% - 40px) !important;
+    }
+
+    #game-terminal .terminal-input-container {
+        margin: 10px !important;
+        margin-top: 5px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    #game-prompt {
+        font-size: 13px !important;
+        margin-right: 8px !important;
+    }
+
+    /* Improve split terminal positioning on mobile */
+    #split-terminal {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 9999 !important;
+    }
+
+    /* Better text wrapping for terminal content */
+    #game-terminal-content * {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* Mobile login form button and footer adjustments */
+    .login-footer {
+        margin-top: 15px !important;
+        padding: 8px 0 !important;
+    }
+
+    .time-display {
+        font-size: 12px !important;
+    }
+
+    /* Success overlay mobile adjustments */
+    .login-success-overlay {
+        padding: 15px !important;
+    }
+
+    .success-details {
+        margin: 10px 0 !important;
+    }
+}
+
+/* Extra small screens - phones in portrait */
+@media (max-width: 480px) {
+    /* Further optimize for very small screens */
+    #game-terminal,
+    #login-screen {
+        min-height: 250px !important;
+        height: calc(50vh - 1px) !important;
+    }
+
+    #game-terminal-content {
+        padding: 8px !important;
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    }
+
+    #game-terminal-input {
+        font-size: 12px !important;
+        padding: 5px 6px !important;
+    }
+
+    #game-prompt {
+        font-size: 12px !important;
+        margin-right: 6px !important;
+    }
+
+    .login-header h2 {
+        font-size: 24px !important;
+    }
+
+    .login-form input {
+        font-size: 12px !important;
+        padding: 6px 8px !important;
+    }
+
+    #login-button {
+        font-size: 12px !important;
+        padding: 8px 16px !important;
+    }
+
+    .blink-text {
+        font-size: 10px !important;
+    }
+
+    .hint-text {
+        font-size: 10px !important;
+        margin: 3px 0 !important;
+    }
+
+    /* Terminal text improvements for very small screens */
+    .terminal-input-container {
+        padding: 0 !important;
+    }
+
+    /* Ensure terminal text is readable */
+    #game-terminal .terminal-line,
+    #game-terminal p,
+    #game-terminal div {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Login footer adjustments */
+    .login-footer {
+        padding: 5px 0 !important;
+    }
+
+    .time-display {
+        font-size: 10px !important;
     }
 }
 
@@ -1643,7 +2268,8 @@ input:-webkit-autofill:focus {
 
 @media (max-width: 768px) {
     .interests-container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
         gap: 20px;
     }
