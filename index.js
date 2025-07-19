@@ -1674,3 +1674,28 @@ Uncomment to enable debug visualization
 setTimeout(debugSections, 1000);
 */
 
+// Function to calculate and update site uptime automatically
+function updateSiteUptime() {
+  // Site launch date: July 12, 2025
+  const launchDate = new Date('2025-07-12T00:00:00+05:45'); // Nepal Time (UTC+5:45)
+  const currentDate = new Date();
+  
+  // Calculate the difference in milliseconds
+  const timeDifference = currentDate - launchDate;
+  
+  // Convert to days
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  
+  // Update the uptime display
+  const uptimeElement = document.getElementById('uptime-days');
+  if (uptimeElement) {
+    uptimeElement.textContent = daysDifference;
+  }
+}
+
+// Update uptime on page load
+document.addEventListener('DOMContentLoaded', updateSiteUptime);
+
+// Update uptime every hour to ensure it stays current
+setInterval(updateSiteUptime, 3600000); // 3600000ms = 1 hour
+
