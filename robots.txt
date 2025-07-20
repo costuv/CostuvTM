@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /favicon/
+Disallow: *.js
+Disallow: *.css
+
+Sitemap: https://costuv.tech/sitemap.xml
+
+# Allow important files for SEO
+Allow: /index.html
+Allow: /images/me.jpeg
+Allow: /images/

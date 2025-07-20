@@ -28,7 +28,7 @@ function handleFormSuccess() {
     });
     
     // Scroll to the contact section
-    const contactSection = document.getElementById('contact-section');
+    const contactSection = document.getElementById('contact');
     if (contactSection) {
       setTimeout(() => {
         contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -1637,10 +1637,10 @@ document.addEventListener('DOMContentLoaded', function() {
 /*
 function debugSections() {
   const sections = [
-    document.getElementById('section1'),
-    document.getElementById('section2'),
+    document.getElementById('home'),
+    document.getElementById('games'),
     document.getElementById('whoami-section'),
-    document.getElementById('contact-section')
+    document.getElementById('contact')
   ];
   
   const debugInfo = document.createElement('div');
